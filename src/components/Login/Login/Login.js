@@ -3,6 +3,9 @@ import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       {/*
@@ -63,13 +66,13 @@ const Login = () => {
                 <div className="text-sm">
                   <p>
                     Don't have an account?
-                                      <span>
-                                      <Link
-                      to={"/signup"}
-                      className="hover:underline font-medium text-indigo-600 hover:text-indigo-500"
-                    >
-                      Sign Up!
-                    </Link>
+                    <span>
+                      <Link
+                        to={"/signup"}
+                        className="hover:underline font-medium text-indigo-600 hover:text-indigo-500"
+                      >
+                        Sign Up!
+                      </Link>
                     </span>
                   </p>
                 </div>
@@ -87,6 +90,7 @@ const Login = () => {
 
             <div>
               <button
+                onClick={handleLogin}
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
@@ -96,7 +100,7 @@ const Login = () => {
                     aria-hidden="true"
                   />
                 </span>
-                Sign in
+                Login in
               </button>
             </div>
           </form>
