@@ -6,7 +6,6 @@ import Transactions from '../Transactions/Transactions';
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
             <Banner></Banner>
             <Transactions></Transactions>
             <FreeTrial></FreeTrial>
