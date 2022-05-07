@@ -3,6 +3,7 @@ import { LockClosedIcon } from "@heroicons/react/solid";
 import { useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebse.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const SignUp = () => {
   const emailRef = useRef("");
@@ -12,13 +13,16 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   if (error) {
-    
+    console.log(error);
   }
   if (user) {
     navigate('/login')
     console.log(user);
 
   }
+  if(loading ){
+    return <Loading></Loading>
+}
 
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -29,14 +33,7 @@ const SignUp = () => {
   };
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
+      
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
@@ -55,16 +52,7 @@ const SignUp = () => {
                 <label htmlFor="name" className="sr-only">
                   Name
                 </label>
-                {/* <input
-                  
-                  id="name"
-                  name="name"
-                  type="text"
-                  autoComplete="Your Name"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Your Name"
-                /> */}
+                
               </div>
               <div>
                 <label htmlFor="email-address" className="sr-only">

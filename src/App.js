@@ -10,11 +10,13 @@ import SignUp from "./components/Login/SignUp/SignUp";
 import NotAvailable from "./components/Pages/NotAvailable/NotAvailable";
 import InventoryDetail from "./components/Pages/InventoryDetail/InventoryDetail";
 import ManageInventory from "./components/Pages/ManageInventory/ManageInventory";
+import Loading from "./components/Shared/Loading/Loading";
 
 function App() {
   return (
     <div >
       <Header></Header>
+      
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

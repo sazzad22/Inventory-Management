@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../../../firebse.init';
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../firebse.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
-  const emailRef = useRef('');
-  const passwordRef = useRef('');
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
@@ -14,17 +15,30 @@ const Login = () => {
   //react auth hooks - email
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  let errorElement;
+  if (error) {
+    errorElement = <p className="text-red-500">Error: {error?.message}</p>;
+    console.log(error);
+  }
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.email.value;
-    const password = event.target.password.value;
 
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    console.log(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    
   };
   return (
     <>
-      
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
@@ -37,21 +51,35 @@ const Login = () => {
               Log in to your account
             </h2>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6">
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
-              
-            <div>
+              <div>
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
-                <input type="text" name="email" ref={emailRef} required id=""  placeholder="Your Name" className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+                <input
+                  type="text"
+                  name="email"
+                  ref={emailRef}
+                  required
+                  id=""
+                  placeholder="Your Name"
+                  className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                />
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
-                <input type="text" name="password" id="" ref={passwordRef} placeholder="Your Name" className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                <input
+                  type="text"
+                  name="password"
+                  id=""
+                  ref={passwordRef}
+                  placeholder="Your Name"
+                  className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                />
               </div>
             </div>
 
@@ -94,7 +122,7 @@ const Login = () => {
                     aria-hidden="true"
                   />
                 </span>
-                Login in
+                Log in
               </button>
             </div>
           </form>
