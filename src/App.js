@@ -9,6 +9,7 @@ import Login from "./components/Login/Login/Login";
 import SignUp from "./components/Login/SignUp/SignUp";
 import NotAvailable from "./components/Pages/NotAvailable/NotAvailable";
 import InventoryDetail from "./components/Pages/InventoryDetail/InventoryDetail";
+import ManageInventory from "./components/Pages/ManageInventory/ManageInventory";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/inventory/:id" element={<InventoryDetail></InventoryDetail>}></Route>
+
+        <Route path="/manageinventory" element={<ManageInventory></ManageInventory>} ></Route>
 
         <Route path="/*" element={<NotAvailable></NotAvailable>}></Route>
       </Routes>
