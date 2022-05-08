@@ -29,11 +29,18 @@ const AddItem = () => {
       });
   };
   return (
-    <div className="py-24  w-1/2`">
-      <h2>Please add Informantion about your items</h2>
+    <div className=" min-h-full flex items-center flex-col	 justify-center py-52 px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold my-10 text-gray-600">Please add Informantion  about <span className="text-sky-500">your items</span></h2>
+          <div>
+          <img
+              className="mx-auto mb-5 h-12 w-auto"
+              src="https://i.ibb.co/qswzm8t/box.png"
+              alt="Workflow"
+            />
+          </div>
       <form onSubmit={handleAddItem}>
         <input
-          className="w-100 mb-2"
+          className="w-100 mb-2 rounded-xl border-blue-500"
           type="text"
           value={user?.email}
           name="email"
@@ -44,7 +51,7 @@ const AddItem = () => {
         />
         <br />
         <input
-          className="w-100 mb-2"
+          className="w-100 mb-2 rounded-xl border-blue-500"
           type="text"
           name="catagory"
           placeholder="Product Catagory"
@@ -52,7 +59,7 @@ const AddItem = () => {
         />
         <br />
         <input
-          className="w-100 mb-2"
+          className="w-100 mb-2 rounded-xl border-blue-500"
           type="text"
           name="name"
           placeholder="Product Name"
@@ -60,7 +67,7 @@ const AddItem = () => {
         />
         <br />
         <input
-          className="w-100 mb-2"
+          className="w-100 mb-2 rounded-xl border-blue-500"
           type="text"
           name="img"
           placeholder="Image Link"
@@ -68,14 +75,14 @@ const AddItem = () => {
         />
         <br />
         <input
-          className="w-100 mb-2"
+          className="w-100 mb-2 rounded-xl border-blue-500"
           type="text"
           name="quantity"
           placeholder="Product quantity"
           required
         />
         <br />
-        <input className="bg-sky-500 rounded" type="submit" value="Add Item" />
+        <input className="w-full bg-sky-500 rounded-xl py-2" type="submit" value="Add Item" />
       </form>
     </div>
   );
