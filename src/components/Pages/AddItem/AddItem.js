@@ -14,6 +14,7 @@ const AddItem = () => {
       name: event.target.name?.value,
       img: event.target.img?.value,
       quantity: event.target.quantity?.value,
+      price: event.target.price?.value,
     };
     console.log(newItem);
 
@@ -27,6 +28,7 @@ const AddItem = () => {
       .then((result) => {
         console.log(result);
       });
+      event.target.reset();
   };
   return (
     <div className=" min-h-full flex items-center flex-col	 justify-center py-52 px-4 sm:px-6 lg:px-8">
@@ -81,6 +83,14 @@ const AddItem = () => {
           type="text"
           name="quantity"
           placeholder="Product quantity"
+          required
+        />
+        <br />
+        <input
+          className="w-100 mb-2 rounded-xl border-blue-500"
+          type="text"
+          name="price"
+          placeholder="Price"
           required
         />
         <br />
