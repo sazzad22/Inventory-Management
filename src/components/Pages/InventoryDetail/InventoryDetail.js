@@ -53,7 +53,7 @@ const InventoryDetail = () => {
     event.target.reset();
   };
   return (
-    <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 md:m-5 lg:m-32 rounded-md shadow-2xl">
+    <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 px-5 md:px-10 lg:px-32 py-32 rounded-md shadow-2xl">
       <div className="w-90 p-10 md:p-4 sm:p-2 rounded-md">
         <img className="rounded-md" src={inventory.img} alt="" />
       </div>

@@ -10,13 +10,16 @@ import SignUp from "./components/Login/SignUp/SignUp";
 import NotAvailable from "./components/Pages/NotAvailable/NotAvailable";
 import InventoryDetail from "./components/Pages/InventoryDetail/InventoryDetail";
 import ManageInventory from "./components/Pages/ManageInventory/ManageInventory";
+import AddItem from './components/Pages/AddItem/AddItem';
+import MyItem from './components/Pages/MyItem/MyItem';
 import Loading from "./components/Shared/Loading/Loading";
+import RequireAuth from "./components/Login/RequreAuth/RequireAuth";
+
 
 function App() {
   return (
-    <div >
+    <div>
       <Header></Header>
-      
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -24,9 +27,39 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/inventory/:id" element={<InventoryDetail></InventoryDetail>}></Route>
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <InventoryDetail></InventoryDetail>
+            </RequireAuth>
+          }
+        ></Route>
 
-        <Route path="/manageinventory" element={<ManageInventory></ManageInventory>} ></Route>
+        <Route
+          path="/manageinventory"
+          element={
+            <RequireAuth>
+              <ManageInventory></ManageInventory>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/additem"
+          element={
+            <RequireAuth>
+              <AddItem></AddItem>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/myitem"
+          element={
+            <RequireAuth>
+              <MyItem></MyItem>
+            </RequireAuth>
+          }
+        ></Route>
 
         <Route path="/*" element={<NotAvailable></NotAvailable>}></Route>
       </Routes>

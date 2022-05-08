@@ -62,24 +62,26 @@ const Header = () => {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    <Link
-                      to={"/login"}
-                      className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
-                    >
-                      Login
-                    </Link>
-                    <Link
+                  <Link
                       to={"/blogs"}
                       className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
                     >
                       Blogs
                     </Link>
-                    <Link
-                      to={"/login"}
+                    {user && <Link
+                      to={"/additem"}
                       className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
                     >
-                      Login
-                    </Link>
+                      Add Item
+                    </Link>}
+                    {user && <Link
+                      to={"/myitem"}
+                      className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
+                    >
+                      My Item
+                    </Link>}
+                    
+                    
                   </div>
                 </div>
               </div>

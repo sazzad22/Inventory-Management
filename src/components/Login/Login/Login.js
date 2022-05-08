@@ -39,13 +39,13 @@ const Login = () => {
     
   };
   return (
-    <>
-      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    < div className="py-24">
+      <div className="min-h-full flex items-center justify-center  py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
             <img
               className="mx-auto h-12 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+              src="https://i.ibb.co/qswzm8t/box.png"
               alt="Workflow"
             />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -65,7 +65,7 @@ const Login = () => {
                   ref={emailRef}
                   required
                   id=""
-                  placeholder="Your Name"
+                  placeholder="Your Email"
                   className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 />
               </div>
@@ -78,7 +78,7 @@ const Login = () => {
                   name="password"
                   id=""
                   ref={passwordRef}
-                  placeholder="Your Name"
+                  placeholder="Password"
                   className="w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 />
               </div>
@@ -132,7 +132,7 @@ const Login = () => {
       <hr className="mx-64 " />
       <hr className="mx-64 " />
       <SocialLogin></SocialLogin>
-    </>
+    </div>
   );
 };
 
