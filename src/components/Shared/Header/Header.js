@@ -69,6 +69,12 @@ const Header = () => {
                       Blogs
                     </Link>
                     {user && <Link
+                      to={"/manageinventory"}
+                      className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
+                    >
+                      Manage Item
+                    </Link>}
+                    {user && <Link
                       to={"/additem"}
                       className="px-3 py-2 flex items-center text-xs uppercase font-medium leading-snug text-white hover:opacity-75"
                     >

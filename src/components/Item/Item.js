@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Item = ({ item }) => {
+const Item = ({ item,handleDelete }) => {
     // console.log(item);
     return (
         <div className='flex justify-around lg:flex-row flex-col  my-4 shadow-2xl border rounded hover:border-sky-400  items-center	  '>
@@ -9,6 +9,7 @@ const Item = ({ item }) => {
             <h1 className='text-xl font -semibold my-3 lg:mx-4 mx-1'>Added By: <span className='font-semibold font-mono text-gray-700'>{item.email}</span> </h1>
             <h1 className='text-xl font -semibold my-3 lg:mx-4 mx-1'>Catogory: <span className='font-semibold font-mono text-gray-700'>{item.catagory}</span> </h1>
             <h1 className='text-xl font -semibold my-3 lg:mx-4 mx-1'>Quantity: <span className='font-semibold font-mono text-gray-700'>{item.quantity}</span> </h1>
+            <button onClick={()=>handleDelete(item._id)} className='text-red-500 hover:shadow-xl text-md font-bold border border-red-600 py-1 px-4' >Delete</button>
         </div>
     );
 };

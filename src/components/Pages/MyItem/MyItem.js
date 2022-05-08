@@ -15,7 +15,27 @@ const MyItem = () => {
             setItems(data)
         }
         getItems();
-    },[])
+    }, []);
+
+    const handleDelete = (id) => {
+        console.log("clicked", id);
+        const proceed = window.confirm("Are you sure");
+        if (proceed) {
+          const url = `http://localhost:5000/item/${id}`;
+          fetch(url, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              const remaining = items.filter((service) => service._id !== id);
+              setItems(remaining);
+            });
+        }
+          
+      };
+    
+
     return (
         <div className='py-32 px-2 md:px-5 lg:px-10  flex flex-col min-h-screen'>
             <h2 className='mx-auto font-3xl lg:text-4xl font-bold text-gray-600'>Your Added Items</h2>
@@ -24,6 +44,7 @@ const MyItem = () => {
                 items.map(item => <Item
                     key={item.name}
                     item={item}
+                    handleDelete={handleDelete}
                 
                 ></Item>)
             }
