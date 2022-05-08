@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <Disclosure
       as="nav"
-      className="bg-gradient-to-r from-sky-500 to-blue-500 fixed w-full"
+      className="bg-gradient-to-r from-sky-500 to-blue-500 sticky w-full"
     >
       {({ open }) => (
         <>

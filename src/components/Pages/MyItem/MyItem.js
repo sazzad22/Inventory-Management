@@ -9,9 +9,9 @@ const MyItem = () => {
     const [user] = useAuthState(auth);
     useEffect(() => {
         const getItems = async () => {
-            const url = `http://localhost:5000/item?email=${user.email}`;
+            const url = `http://localhost:5000/myinventory?email=${user.email}`;
             const { data } = await axios.get(url);
-            // console.log(data);
+            console.log(data,user.email,url );
             setItems(data)
         }
         getItems();
@@ -21,7 +21,7 @@ const MyItem = () => {
         console.log("clicked", id);
         const proceed = window.confirm("Are you sure");
         if (proceed) {
-          const url = `http://localhost:5000/item/${id}`;
+          const url = `http://localhost:5000/inventory/${id}`;
           fetch(url, {
             method: "DELETE",
           })

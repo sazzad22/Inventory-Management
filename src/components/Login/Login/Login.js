@@ -31,8 +31,8 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
     console.log(email, password);
     await signInWithEmailAndPassword(email, password);
 

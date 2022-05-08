@@ -10,14 +10,14 @@ const AddItem = () => {
       
     const newItem = {
       email: user.email,
-      catagory: event.target.catagory?.value,
+      category: event.target.catagory?.value,
       name: event.target.name?.value,
       img: event.target.img?.value,
       quantity: event.target.quantity?.value,
       };
       console.log(newItem);
     
-    const url = `http://localhost:5000/item`;
+    const url = `http://localhost:5000/inventory`;
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
