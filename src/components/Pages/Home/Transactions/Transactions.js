@@ -4,41 +4,40 @@ import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@her
 const Transactions = () => {
     const features = [
         {
-          name: 'Competitive exchange rates',
+          name: 'Worldwide services',
           description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'We store your inventory in a combination of our fulfillment centers.Our system is available anywhere in the world.',
           icon: GlobeAltIcon,
         },
         {
           name: 'No hidden fees',
           description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'We provide our services at the best rate . We also dont charge with extra fees or any other hidden fees like the other companies offering services ',
           icon: ScaleIcon,
         },
         {
-          name: 'Transfers are instant',
+          name: 'Professional Support',
           description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Our website and service are handled by professionals .Connect your online store, import your products, then send us your inventory.',
           icon: LightningBoltIcon,
         },
         {
-          name: 'Mobile notifications',
+          name: 'Mobile app Support',
           description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'We also provide mobile app support for you inventory management system.',
           icon: AnnotationIcon,
         },
       ]
     return (
-        <div className="py-12 bg-white">
+        <div className="py-12 bg-white my-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Transactions</h2>
+            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase"></h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              A better way to send money
+              A better way to Manage inventory
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-              accusamus quisquam.
+              Be Smart and join our warehouse today for the services we provide.
             </p>
           </div>
   

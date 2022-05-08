@@ -83,6 +83,7 @@ const Login = () => {
                 />
               </div>
             </div>
+            {errorElement}
 
             <div className="flex items-center justify-between">
               <div className="flex items-center">

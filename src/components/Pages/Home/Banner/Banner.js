@@ -16,15 +16,13 @@ const Banner = () => {
         <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           <div className="sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-              <span className="block xl:inline">Data to enrich your</span>{" "}
+              <span className="block xl:inline">Warehouse Manager to enrich your</span>{" "}
               <span className="block text-sky-500 xl:inline">
                 online business
               </span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+            We help online businessmen and retailers get from shopping cart to customer with warehouse management, reduced shipping costs, seamless integrations, and a live, human customer support team.
             </p>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
@@ -47,7 +45,7 @@ const Banner = () => {
           </div>
         </main>
       </div>
-      <div className="lg:w-1/2 md:py-10 sm:py-10">
+      <div className="lg:w-full md:py-10 sm:py-10">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="https://i.ibb.co/0f9rKvy/17876756.jpg"
