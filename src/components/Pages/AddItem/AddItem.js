@@ -6,18 +6,18 @@ const AddItem = () => {
   const [user] = useAuthState(auth);
 
   const handleAddItem = (event) => {
-      event.preventDefault();
-      
+    event.preventDefault();
+
     const newItem = {
       email: user.email,
       category: event.target.catagory?.value,
       name: event.target.name?.value,
       img: event.target.img?.value,
       quantity: event.target.quantity?.value,
-      };
-      console.log(newItem);
-    
-    const url = `http://localhost:5000/inventory`;
+    };
+    console.log(newItem);
+
+    const url = ` https://hidden-citadel-35575.herokuapp.com/inventory`;
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -30,14 +30,17 @@ const AddItem = () => {
   };
   return (
     <div className=" min-h-full flex items-center flex-col	 justify-center py-52 px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold my-10 text-gray-600">Please add Informantion  about <span className="text-sky-500">your items</span></h2>
-          <div>
-          <img
-              className="mx-auto mb-5 h-12 w-auto"
-              src="https://i.ibb.co/qswzm8t/box.png"
-              alt="Workflow"
-            />
-          </div>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold my-10 text-gray-600">
+        Please add Informantion about{" "}
+        <span className="text-sky-500">your items</span>
+      </h2>
+      <div>
+        <img
+          className="mx-auto mb-5 h-12 w-auto"
+          src="https://i.ibb.co/qswzm8t/box.png"
+          alt="Workflow"
+        />
+      </div>
       <form onSubmit={handleAddItem}>
         <input
           className="w-100 mb-2 rounded-xl border-blue-500"
@@ -47,7 +50,6 @@ const AddItem = () => {
           placeholder="name"
           required
           readOnly
-          
         />
         <br />
         <input
@@ -82,7 +84,11 @@ const AddItem = () => {
           required
         />
         <br />
-        <input className="w-full bg-sky-500 rounded-xl py-2" type="submit" value="Add Item" />
+        <input
+          className="w-full bg-sky-500 rounded-xl py-2"
+          type="submit"
+          value="Add Item"
+        />
       </form>
     </div>
   );

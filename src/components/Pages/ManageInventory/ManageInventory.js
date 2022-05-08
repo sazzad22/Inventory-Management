@@ -6,7 +6,7 @@ import Inventory from "../Home/Inventory/Inventory";
 const ManageInventory = () => {
   const [inventories, setInventories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch(" https://hidden-citadel-35575.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventories(data));
   }, []);
@@ -15,7 +15,7 @@ const ManageInventory = () => {
     // console.log("clicked", id);
     const proceed = window.confirm("Are you sure");
     if (proceed) {
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = ` https://hidden-citadel-35575.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -26,7 +26,6 @@ const ManageInventory = () => {
           setInventories(remaining);
         });
     }
-      
   };
 
   return (

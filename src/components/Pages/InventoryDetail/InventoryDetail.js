@@ -8,7 +8,7 @@ const InventoryDetail = () => {
   const [inventory, setInventory] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = ` https://hidden-citadel-35575.herokuapp.com/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
@@ -19,7 +19,7 @@ const InventoryDetail = () => {
     quantity -= 1;
 
     const updatedInventory = { quantity };
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = ` https://hidden-citadel-35575.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -39,7 +39,7 @@ const InventoryDetail = () => {
     const newStockedItem = parseInt(stockRef.current.value);
     let quantity = inventory.quantity + newStockedItem;
     const updatedInventory = { quantity };
-    fetch(`http://localhost:5000/inventory/${id}`, {
+    fetch(` https://hidden-citadel-35575.herokuapp.com/inventory/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -97,7 +97,12 @@ const InventoryDetail = () => {
             {inventory.quantity}
           </span>
         </p>
-        <button className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl hover:bg-sky-400 my-2" onClick={handleReduceQuantity}>Delivered</button>
+        <button
+          className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl hover:bg-sky-400 my-2"
+          onClick={handleReduceQuantity}
+        >
+          Delivered
+        </button>
         <form onSubmit={handleStock}>
           <input
             className="rounded-md "
@@ -110,10 +115,13 @@ const InventoryDetail = () => {
           <button className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl m-7 hover:bg-sky-400">
             Add to Stock
           </button>
-              </form>
-              <Link className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl m-7 hover:bg-sky-400" to={'/manageinventory'}>
-                  Manage Inventories
-              </Link>
+        </form>
+        <Link
+          className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl m-7 hover:bg-sky-400"
+          to={"/manageinventory"}
+        >
+          Manage Inventories
+        </Link>
       </div>
     </div>
   );
