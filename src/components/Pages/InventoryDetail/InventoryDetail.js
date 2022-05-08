@@ -111,7 +111,7 @@ const InventoryDetail = () => {
             Add to Stock
           </button>
               </form>
-              <Link to={'/manageinventory'}>
+              <Link className="rounded-lg shadow-md bg-sky-500 px-4 py-3 text-white font-medium hover:shadow-2xl m-7 hover:bg-sky-400" to={'/manageinventory'}>
                   Manage Inventories
               </Link>
       </div>

@@ -1,5 +1,6 @@
 import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Inventory from "../Inventory/Inventory";
 
 const Inventories = () => {
@@ -17,8 +18,13 @@ const Inventories = () => {
           {inventories.slice(0, 6).map((inventory) => (
             <Inventory key={inventory._id} inventory={inventory}></Inventory>
           ))}
-        </div>
+        </div >
+        
       </div>
+      <div className="  flex justify-center"><Link className="rounded-lg shadow-md bg-sky-500  py-3 text-white  font-medium hover:shadow-2xl px-32 w-50 hover:bg-sky-400" to={'/manageinventory'}>
+                  Manage Inventories
+              </Link></div>
+      
     </div>
   );
 };
