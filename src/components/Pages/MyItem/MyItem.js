@@ -41,7 +41,7 @@ const MyItem = () => {
       </h2>
       <div className="grid grid-cols-1 gap-4 lg:mx-15 md:mx-5 sm:mx-2 p-1 lg:p-5">
         {items.map((item) => (
-          <Item key={item.name} item={item} handleDelete={handleDelete}></Item>
+          <Item key={item._id} item={item} handleDelete={handleDelete}></Item>
         ))}
       </div>
     </div>
