@@ -9,7 +9,7 @@
 * The site has the inventories that the owner provides ,as well as their details and prices.
 * User can add new inventory item and also delete them . 
 * The My Item page will only show the items add or created by the user.
-* The server side is built on node.js
+* The server side is built on node.js(express)
 * For the saving the data as well a the new added data Mongodb ,a no SQL database is used.
 * The website has responsive design.
 * Login and Sign Up authentication is provided in the website.One can Sign Up and Log into the website
