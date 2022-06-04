@@ -2,14 +2,22 @@ import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Inventory from "../Inventory/Inventory";
+import Loading from '../../../Shared/Loading/Loading';
 
 const Inventories = () => {
   const [inventories, setInventories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
+
     fetch(" https://hidden-citadel-35575.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventories(data));
+    setIsLoading(false );
   }, []);
+  if (isLoading) {
+    return <Loading></Loading>
+  }
   return (
     <div className="bg-white my-5">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

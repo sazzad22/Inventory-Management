@@ -13,5 +13,5 @@
 * For the saving the data as well a the new added data Mongodb ,a no SQL database is used.
 * The website has responsive design.
 * Login and Sign Up authentication is provided in the website.One can Sign Up and Log into the website
-* If a user signs up , an email verification will be sent to that email
+* If a user signs up , an email verification will be sent to user's email
 * User can Log in using their Google account too.
