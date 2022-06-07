@@ -6,6 +6,10 @@
 
 ### About the Website
 * The website is for a managing product inventories and storage units.
+* Visualized inventories and management services and implemented
+feature for update product and  quantity 
+* Users can signUp, log into the website and manage their own orders and
+ inventory items.
 * The site has the inventories that the owner provides ,as well as their details and prices.
 * User can add new inventory item and also delete them . 
 * The My Item page will only show the items add or created by the user.
